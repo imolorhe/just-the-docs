@@ -1,13 +1,13 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name          = "just-the-docs"
+  spec.name          = "just-the-docs-altair"
   spec.version       = "0.2.3"
-  spec.authors       = ["Patrick Marsceill"]
-  spec.email         = ["patrick.marsceill@gmail.com"]
+  spec.authors       = ["Patrick Marsceill", "Samuel Imolorhe"]
+  spec.email         = ["patrick.marsceill@gmail.com", "samuelimolo4real@gmail.com"]
 
   spec.summary       = %q{A modern, high customizable, responsive Jekyll theme for documention with built-in search.}
-  spec.homepage      = "https://github.com/pmarsceill/just-the-docs"
+  spec.homepage      = "https://github.com/imolorhe/just-the-docs"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|bin|_layouts|_includes|lib|Rakefile|_sass|LICENSE|README)}i) }
