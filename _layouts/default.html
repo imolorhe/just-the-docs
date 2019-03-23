@@ -79,5 +79,10 @@
     </div>
   </div>
 
+  {% capture addons_content %}{% include addons.html %}{% endcapture %}
+  {% unless addons_content contains "Liquid error" %}
+    {% include addons.html %}
+  {% endunless %}
 </body>
 </html>
+
