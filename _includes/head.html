@@ -1,11 +1,33 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  {% if page.description %}
-  <meta name="Description" content="{{ page.description }}">
-  {% endif %}
+  {% assign seo_description = page.description | default: site.description %}
+  {% assign seo_title = page.title | append: ' - ' | append: site.title %}
 
-  <title>{{ page.title }} - {{ site.title }}</title>
+  <!-- HTML Meta Tags -->
+  <meta name="description" content="{{ seo_description }}">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="{{ seo_title }}">
+    <meta itemprop="description" content="{{ seo_description }}">
+    <meta itemprop="image" content="{{ seo_image | absolute_url }}">
+    <meta name="author" content="{{ site.seo_author }}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ seo_title }}">
+    <meta property="og:description" content="{{ seo_description }}">
+    <meta property="og:image" content="{{ seo_image | absolute_url }}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ seo_title }}">
+    <meta name="twitter:description" content="{{ seo_description }}">
+    <meta name="twitter:image" content="{{ seo_image | absolute_url }}">
+  <title>
+    {{ page.title }} - {{ site.title }}
+  </title>
   <link rel="stylesheet" href="{{ "/assets/css/just-the-docs.css" | absolute_url }}">
 
   {% if site.ga_tracking != nil %}

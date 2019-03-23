@@ -112,6 +112,11 @@
   }
 }
 
+.site-title-logo {
+  width: 30px;
+  vertical-align: middle;
+}
+
 .navigation {
   @include mq(md) {
     padding-top: $sp-8;
